@@ -1,0 +1,2241 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para Zoe ♡</title>
+
+<style>
+
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8eee8;
+    color: #533a32;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   PANTALLA DE INICIO
+========================= */
+
+.inicio {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    background: linear-gradient(
+        135deg,
+        #5b4036,
+        #80565b,
+        #b97888
+    );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+    transition: 1s;
+}
+
+.inicio.oculto {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sobre {
+    text-align: center;
+    color: white;
+}
+
+.sobre-icono {
+    font-size: 90px;
+    cursor: pointer;
+    animation: flotar 2s infinite;
+}
+
+.sobre h1 {
+    font-family: Georgia, serif;
+    font-size: 50px;
+    font-weight: normal;
+    margin: 15px;
+}
+
+.sobre p {
+    color: #f8dfe3;
+}
+
+.abrir {
+    margin-top: 25px;
+    padding: 13px 35px;
+    border: 1px solid #f3cbd2;
+    border-radius: 30px;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.abrir:hover {
+    background-color: #f3cbd2;
+    color: #5b4036;
+}
+
+
+/* =========================
+   ANIMACIONES
+========================= */
+
+@keyframes flotar {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+}
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes escribir {
+
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================
+   MENÚ
+========================= */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+
+    background-color: #5b4036;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: #f8dce1;
+    text-decoration: none;
+    margin: 0 12px;
+    font-size: 13px;
+}
+
+nav a:hover {
+    color: white;
+}
+
+
+/* =========================
+   PORTADA
+========================= */
+
+.portada {
+
+    min-height: 90vh;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            #f1c9c9,
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 80% 80%,
+            #dfc3b5,
+            transparent 30%
+        ),
+
+        #f6e4df;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.portada h1 {
+
+    font-family: Georgia, serif;
+    font-size: clamp(50px, 9vw, 90px);
+    font-weight: normal;
+    margin: 10px;
+}
+
+.portada h2 {
+
+    font-family: Georgia, serif;
+    font-size: clamp(45px, 8vw, 75px);
+    color: #b76f82;
+    font-style: italic;
+    font-weight: normal;
+    margin: 0;
+}
+
+.mini {
+
+    letter-spacing: 5px;
+    font-size: 12px;
+    color: #8c6055;
+}
+
+.boton {
+
+    margin-top: 30px;
+    padding: 13px 35px;
+
+    background-color: #9d6270;
+    color: white;
+
+    text-decoration: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+
+/* =========================
+   SECCIONES
+========================= */
+
+section {
+
+    min-height: 100vh;
+    padding: 90px 8%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.titulo {
+
+    letter-spacing: 4px;
+    font-size: 12px;
+    color: #a56d70;
+}
+
+h2 {
+
+    font-family: Georgia, serif;
+    font-size: 48px;
+    font-weight: normal;
+    margin: 15px 0 40px;
+}
+
+
+/* =========================
+   CARTA
+========================= */
+
+.carta {
+    background-color: #f1dcd6;
+}
+
+.papel {
+
+    max-width: 700px;
+
+    background-color: #fffaf7;
+
+    padding: 45px;
+
+    text-align: left;
+
+    box-shadow: 0 15px 35px #67483d25;
+
+    border: 1px solid #dfc2b8;
+}
+
+.papel p {
+
+    line-height: 2;
+    margin-bottom: 18px;
+}
+
+.firma {
+
+    text-align: right;
+
+    color: #b76f82;
+
+    font-family: Georgia, serif;
+
+    font-size: 22px;
+}
+
+
+/* =========================
+   17 COSAS
+========================= */
+
+.cosas {
+    background-color: #fff3f4;
+}
+
+.botones17 {
+
+    max-width: 800px;
+
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 12px;
+}
+
+.botones17 button {
+
+    border: none;
+
+    background-color: #efd3d4;
+
+    color: #62443d;
+
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: .3s;
+}
+
+.botones17 button:hover {
+
+    background-color: #b86f82;
+
+    color: white;
+
+    transform: scale(1.1);
+}
+
+#mensaje17 {
+
+    margin-top: 35px;
+
+    max-width: 500px;
+
+    min-height: 60px;
+
+    color: #9c5d70;
+
+    font-family: Georgia, serif;
+
+    font-size: 22px;
+}
+
+
+/* ==================================================
+   NUEVA SECCIÓN INTERACTIVA
+================================================== */
+
+.interactivo {
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #f3d4d5,
+            transparent 30%
+        ),
+
+        #ead5c9;
+
+    min-height: auto;
+
+    padding-top: 100px;
+}
+
+
+/* =========================
+   BLOQUES
+========================= */
+
+.interaccion-bloque {
+
+    width: min(850px, 95%);
+
+    background-color: #fffaf7;
+
+    padding: 40px;
+
+    margin: 25px 0;
+
+    border-radius: 22px;
+
+    box-shadow: 0 15px 35px #62433920;
+
+    border: 1px solid #ead0c9;
+
+    transition: .5s;
+}
+
+.interaccion-bloque:hover {
+
+    transform: translateY(-3px);
+
+}
+
+
+/* =========================
+   SOBRES
+========================= */
+
+.sobres {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+}
+
+.sobre-btn {
+
+    border: none;
+
+    background-color: #f2d8da;
+
+    border-radius: 15px;
+
+    padding: 25px 10px;
+
+    cursor: pointer;
+
+    color: #67463e;
+
+    transition: .3s;
+
+    font-size: 14px;
+}
+
+.sobre-btn span {
+
+    display: block;
+
+    font-size: 40px;
+
+    margin-bottom: 10px;
+}
+
+.sobre-btn:hover {
+
+    background-color: #c78694;
+
+    color: white;
+
+    transform: translateY(-7px);
+}
+
+.resultado {
+
+    margin-top: 25px;
+
+    padding: 25px;
+
+    background-color: #f8e6e5;
+
+    border-radius: 15px;
+
+    display: none;
+
+    animation: aparecer .5s;
+}
+
+
+/* =========================
+   REGALOS
+========================= */
+
+.regalos {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.regalo {
+
+    border: none;
+
+    background-color: #f0d5d0;
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    color: #65453c;
+
+    transition: .3s;
+}
+
+.regalo .emoji {
+
+    display: block;
+
+    font-size: 50px;
+
+    margin-bottom: 10px;
+}
+
+.regalo:hover {
+
+    transform: scale(1.05);
+
+    background-color: #e2b8bb;
+}
+
+
+/* =========================
+   TEST
+========================= */
+
+.pregunta {
+
+    margin: 25px 0;
+
+    text-align: left;
+}
+
+.pregunta p {
+
+    font-family: Georgia, serif;
+
+    font-size: 20px;
+}
+
+.opciones {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.opciones button {
+
+    border: 1px solid #c99691;
+
+    background-color: #fff8f5;
+
+    color: #62443d;
+
+    border-radius: 20px;
+
+    padding: 10px 17px;
+
+    cursor: pointer;
+}
+
+.opciones button:hover {
+
+    background-color: #d99ca9;
+
+    color: white;
+}
+
+.correcta {
+
+    background-color: #c68b98 !important;
+
+    color: white !important;
+}
+
+
+/* =========================
+   CARTA QUE SE ESCRIBE
+========================= */
+
+.carta-escritura {
+
+    min-height: 200px;
+
+    background-color: #f9eee9;
+
+    border-radius: 15px;
+
+    padding: 30px;
+
+    font-family: Georgia, serif;
+
+    font-size: 20px;
+
+    line-height: 2;
+
+    text-align: left;
+
+    margin-top: 20px;
+}
+
+.carta-escritura p {
+
+    opacity: 0;
+
+    transform: translateY(10px);
+
+    transition: .8s;
+}
+
+.carta-escritura p.visible {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.boton-interactivo {
+
+    border: none;
+
+    background-color: #9d6270;
+
+    color: white;
+
+    border-radius: 25px;
+
+    padding: 13px 25px;
+
+    cursor: pointer;
+
+    margin-top: 15px;
+}
+
+
+/* =========================
+   JARDÍN
+========================= */
+
+.jardin {
+
+    min-height: 300px;
+
+    position: relative;
+
+    background-color: #f9eee8;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    margin-top: 20px;
+}
+
+.flor {
+
+    position: absolute;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    animation: flotar 2s infinite;
+
+    user-select: none;
+}
+
+.contador {
+
+    margin-top: 15px;
+
+    font-family: Georgia, serif;
+
+    color: #9d6270;
+
+    font-size: 20px;
+}
+
+
+/* =========================
+   CANCIONES
+========================= */
+
+.canciones {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+.cancion {
+
+    border: none;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    background-color: #f1d5d5;
+
+    color: #62443d;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.cancion:hover {
+
+    transform: translateY(-5px);
+
+    background-color: #d89ba8;
+}
+
+
+/* =========================
+   QUIZ FINAL
+========================= */
+
+.quiz-final {
+
+    text-align: left;
+
+    max-width: 600px;
+
+    margin: auto;
+}
+
+.quiz-final button {
+
+    display: block;
+
+    width: 100%;
+
+    margin: 10px 0;
+
+    padding: 13px;
+
+    border: 1px solid #d3aaa1;
+
+    border-radius: 20px;
+
+    background-color: #fff8f5;
+
+    cursor: pointer;
+
+    color: #62443d;
+}
+
+.quiz-final button:hover {
+
+    background-color: #dfaeb6;
+
+}
+
+#resultadoQuiz {
+
+    display: none;
+
+    margin-top: 25px;
+
+    padding: 30px;
+
+    background-color: #f2d8dc;
+
+    border-radius: 18px;
+
+    font-family: Georgia, serif;
+
+    font-size: 21px;
+
+    text-align: center;
+}
+
+
+/* =========================
+   SORPRESA
+========================= */
+
+.sorpresa {
+
+    background-color: #fff7f5;
+}
+
+.caja {
+
+    padding: 30px;
+
+    max-width: 600px;
+
+    background-color: #f3ded9;
+
+    border-radius: 15px;
+}
+
+.caja button {
+
+    padding: 13px 30px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background-color: #9d6270;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+#secreto {
+
+    display: none;
+
+    margin-top: 25px;
+
+    font-family: Georgia, serif;
+
+    font-size: 25px;
+
+    color: #a75e73;
+
+    animation: aparecer .7s;
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+.final {
+
+    min-height: 80vh;
+
+    background: linear-gradient(
+        135deg,
+        #543a32,
+        #785048,
+        #9c6371
+    );
+
+    color: white;
+}
+
+.final h1 {
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(65px, 12vw, 120px);
+
+    color: #f1b7c2;
+
+    font-weight: normal;
+}
+
+.final p {
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   CORAZONES
+========================= */
+
+.corazon {
+
+    position: fixed;
+
+    pointer-events: none;
+
+    animation: subir 2s forwards;
+
+    z-index: 200;
+}
+
+@keyframes subir {
+
+    0% {
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        opacity: 1;
+    }
+
+    100% {
+
+        transform:
+            translateY(-250px)
+            scale(1.5);
+
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 700px) {
+
+    nav a {
+
+        margin: 0 4px;
+
+        font-size: 10px;
+    }
+
+    .botones17 {
+
+        grid-template-columns:
+            repeat(4, 1fr);
+    }
+
+    .papel {
+
+        padding: 25px;
+    }
+
+    .interaccion-bloque {
+
+        padding: 25px;
+    }
+
+    .sobres {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .regalos {
+
+        grid-template-columns: 1fr;
+    }
+
+    .canciones {
+
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     PANTALLA INICIAL
+================================================== -->
+
+<div class="inicio" id="inicio">
+
+    <div class="sobre">
+
+        <div
+            class="sobre-icono"
+            onclick="abrirPagina()">
+
+            💌
+
+        </div>
+
+        <h1>Para Zoe ♡</h1>
+
+        <p>
+            Tengo algo preparado para ti...
+        </p>
+
+        <button
+            class="abrir"
+            onclick="abrirPagina()">
+
+            Abrir mi regalo
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ==================================================
+     MENÚ
+================================================== -->
+
+<nav>
+
+    <a href="#inicioPagina">
+        Inicio
+    </a>
+
+    <a href="#carta">
+        Carta
+    </a>
+
+    <a href="#cosas">
+        17 cosas
+    </a>
+
+    <a href="#interactivo">
+        Secretos
+    </a>
+
+    <a href="#sorpresa">
+        Final
+    </a>
+
+</nav>
+
+
+<!-- ==================================================
+     PORTADA
+================================================== -->
+
+<div
+    class="portada"
+    id="inicioPagina">
+
+    <p class="mini">
+        A LITTLE GIFT FOR YOU
+    </p>
+
+    <h1>
+        Happy Birthday
+    </h1>
+
+    <h2>
+        Zoe ♡
+    </h2>
+
+    <p>
+        17 años · 02 de octubre
+    </p>
+
+    <a
+        class="boton"
+        href="#carta">
+
+        comenzar ♡
+
+    </a>
+
+</div>
+
+
+<!-- ==================================================
+     CARTA
+================================================== -->
+
+<section
+    class="carta"
+    id="carta">
+
+    <p class="titulo">
+        DEAR ZOE
+    </p>
+
+    <h2>
+        Una pequeña carta ♡
+    </h2>
+
+    <div class="papel">
+
+        <p>
+            Desde hace 1 año que te conozco, siempre has sido
+            una persona demasiado especial para mí.
+        </p>
+
+        <p>
+            Siempre me pareció increíble cómo pudimos conectar
+            tan rápido y cómo terminamos creando tantos
+            recuerdos juntas.
+        </p>
+
+        <p>
+            Gracias por cada conversación, cada risa,
+            cada momento bonito y por simplemente ser tú.
+        </p>
+
+        <p>
+            Espero que este nuevo año de tu vida esté lleno
+            de cosas bonitas, nuevas experiencias y momentos
+            que te hagan muy feliz.
+        </p>
+
+        <p>
+            Espero que podamos seguir creando recuerdos
+            durante muchísimo tiempo.
+        </p>
+
+        <p class="firma">
+            Con muchísimo amor,<br>
+            Alex ♡
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     17 COSAS
+================================================== -->
+
+<section
+    class="cosas"
+    id="cosas">
+
+    <p class="titulo">
+        HAZ CLIC
+    </p>
+
+    <h2>
+        17 cosas sobre ti ♡
+    </h2>
+
+    <p>
+        Toca cada número para descubrir una.
+    </p>
+
+    <div class="botones17">
+
+        <button onclick="mostrar17(1)">1</button>
+        <button onclick="mostrar17(2)">2</button>
+        <button onclick="mostrar17(3)">3</button>
+        <button onclick="mostrar17(4)">4</button>
+        <button onclick="mostrar17(5)">5</button>
+        <button onclick="mostrar17(6)">6</button>
+        <button onclick="mostrar17(7)">7</button>
+        <button onclick="mostrar17(8)">8</button>
+        <button onclick="mostrar17(9)">9</button>
+        <button onclick="mostrar17(10)">10</button>
+        <button onclick="mostrar17(11)">11</button>
+        <button onclick="mostrar17(12)">12</button>
+        <button onclick="mostrar17(13)">13</button>
+        <button onclick="mostrar17(14)">14</button>
+        <button onclick="mostrar17(15)">15</button>
+        <button onclick="mostrar17(16)">16</button>
+        <button onclick="mostrar17(17)">17</button>
+
+    </div>
+
+    <div id="mensaje17">
+        ♡ Elige un número ♡
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     NUEVA EXPERIENCIA
+================================================== -->
+
+<section
+    class="interactivo"
+    id="interactivo">
+
+    <p class="titulo">
+        ZOE'S SECRET GARDEN
+    </p>
+
+    <h2>
+        Una pequeña aventura ♡
+    </h2>
+
+    <p>
+        Hay algunas cosas escondidas aquí...
+    </p>
+
+
+    <!-- ======================
+         1. SOBRES
+    ======================= -->
+
+    <div class="interaccion-bloque">
+
+        <p class="titulo">
+            01 · CARTAS SECRETAS
+        </p>
+
+        <h2>
+            Elige un sobre 💌
+        </h2>
+
+        <p>
+            No sabes qué hay dentro hasta abrirlo.
+        </p>
+
+        <div class="sobres">
+
+            <button
+                class="sobre-btn"
+                onclick="abrirSobre(1)">
+
+                <span>💗</span>
+
+                Cuando estés triste
+
+            </button>
+
+            <button
+                class="sobre-btn"
+                onclick="abrirSobre(2)">
+
+                <span>🌷</span>
+
+                Cuando me extrañes
+
+            </button>
+
+            <button
+                class="sobre-btn"
+                onclick="abrirSobre(3)">
+
+                <span>☕</span>
+
+                Cuando necesites reír
+
+            </button>
+
+            <button
+                class="sobre-btn"
+                onclick="abrirSobre(4)">
+
+                <span>🎂</span>
+
+                Para hoy
+
+            </button>
+
+        </div>
+
+        <div
+            id="resultadoSobre"
+            class="resultado">
+        </div>
+
+    </div>
+
+
+    <!-- ======================
+         2. REGALOS
+    ======================= -->
+
+    <div class="interaccion-bloque">
+
+        <p class="titulo">
+            02 · CAJITAS
+        </p>
+
+        <h2>
+            Escoge un regalo 🎁
+        </h2>
+
+        <div class="regalos">
+
+            <button
+                class="regalo"
+                onclick="abrirRegalo(1)">
+
+                <span class="emoji">
+                    🧸
+                </span>
+
+                Un recuerdo
+
+            </button>
+
+            <button
+                class="regalo"
+                onclick="abrirRegalo(2)">
+
+                <span class="emoji">
+                    🎀
+                </span>
+
+                Algo bonito
+
+            </button>
+
+            <button
+                class="regalo"
+                onclick="abrirRegalo(3)">
+
+                <span class="emoji">
+                    ✨
+                </span>
+
+                Una sorpresa
+
+            </button>
+
+        </div>
+
+        <div
+            id="resultadoRegalo"
+            class="resultado">
+        </div>
+
+    </div>
+
+
+    <!-- ======================
+         3. TEST
+    ======================= -->
+
+    <div class="interaccion-bloque">
+
+        <p class="titulo">
+            03 · TEST DE ZOE
+        </p>
+
+        <h2>
+            ¿Qué tan bien te conoces? 🎀
+        </h2>
+
+        <div class="pregunta">
+
+            <p>
+                ¿Qué somos?
+            </p>
+
+            <div class="opciones">
+
+                <button onclick="respuestaTest(this)">
+                    Amigas
+                </button>
+
+                <button onclick="respuestaTest(this)">
+                    Almas gemelas
+                </button>
+
+                <button onclick="respuestaTest(this)">
+                    Una situación inexplicable
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="pregunta">
+
+            <p>
+                ¿Qué hacemos mejor?
+            </p>
+
+            <div class="opciones">
+
+                <button onclick="respuestaTest(this)">
+                    Hablar durante horas
+                </button>
+
+                <button onclick="respuestaTest(this)">
+                    Reírnos por cualquier cosa
+                </button>
+
+                <button onclick="respuestaTest(this)">
+                    Las dos
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="pregunta">
+
+            <p>
+                ¿Qué quiero para ti?
+            </p>
+
+            <div class="opciones">
+
+                <button onclick="respuestaTest(this)">
+                    Que seas feliz
+                </button>
+
+                <button onclick="respuestaTest(this)">
+                    Que cumplas todos tus sueños
+                </button>
+
+                <button onclick="respuestaTest(this)">
+                    Las dos ♡
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ======================
+         4. CARTA ANIMADA
+    ======================= -->
+
+    <div class="interaccion-bloque">
+
+        <p class="titulo">
+            04 · CARTA SECRETA
+        </p>
+
+        <h2>
+            Una carta que se escribe sola ✍️
+        </h2>
+
+        <button
+            class="boton-interactivo"
+            onclick="escribirCarta()">
+
+            ✨ Escribe mi carta ✨
+
+        </button>
+
+
+        <div
+            class="carta-escritura"
+            id="cartaEscritura">
+
+            <p id="linea1">
+                Zoe...
+            </p>
+
+            <p id="linea2">
+                Hoy cumples 17.
+            </p>
+
+            <p id="linea3">
+                Y aunque no pueda estar ahí físicamente,
+                quería hacerte un pequeño espacio donde
+                pudieras sentir todo mi cariño.
+            </p>
+
+            <p id="linea4">
+                Gracias por este año juntas.
+            </p>
+
+            <p id="linea5">
+                Y ojalá este sea solamente el primero
+                de muchísimos más. ♡
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ======================
+         5. JARDÍN
+    ======================= -->
+
+    <div class="interaccion-bloque">
+
+        <p class="titulo">
+            05 · JARDÍN SECRETO
+        </p>
+
+        <h2>
+            Encuentra las flores 🌷
+        </h2>
+
+        <p>
+            Hay 10 flores escondidas.
+            Tienes que encontrarlas todas.
+        </p>
+
+
+        <div
+            class="jardin"
+            id="jardin">
+
+        </div>
+
+
+        <div class="contador">
+            Flores encontradas:
+            <span id="contadorFlores">0</span>/10
+        </div>
+
+
+        <div
+            id="mensajeJardin"
+            class="resultado">
+
+            🌷 El jardín está completo.
+
+            <br><br>
+
+            Hay algo escondido entre las flores...
+
+            <br><br>
+
+            <button
+                class="boton-interactivo"
+                onclick="descubrirJardin()">
+
+                ♡ descubrir ♡
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ======================
+         6. CANCIONES
+    ======================= -->
+
+    <div class="interaccion-bloque">
+
+        <p class="titulo">
+            06 · MUSIC VIBES
+        </p>
+
+        <h2>
+            Elige una vibe 🎧
+        </h2>
+
+        <div class="canciones">
+
+            <button
+                class="cancion"
+                onclick="vibe(1)">
+
+                ☕
+                <br><br>
+
+                Para cuando estés tranquila
+
+            </button>
+
+            <button
+                class="cancion"
+                onclick="vibe(2)">
+
+                💗
+                <br><br>
+
+                Para cuando me extrañes
+
+            </button>
+
+            <button
+                class="cancion"
+                onclick="vibe(3)">
+
+                🪩
+                <br><br>
+
+                Para cuando quieras bailar
+
+            </button>
+
+            <button
+                class="cancion"
+                onclick="vibe(4)">
+
+                🌙
+                <br><br>
+
+                Para las 2 a.m.
+
+            </button>
+
+        </div>
+
+
+        <div
+            id="resultadoVibe"
+            class="resultado">
+        </div>
+
+    </div>
+
+
+    <!-- ======================
+         7. QUIZ FINAL
+    ======================= -->
+
+    <div class="interaccion-bloque">
+
+        <p class="titulo">
+            07 · FINAL
+        </p>
+
+        <h2>
+            ¿Cuánto me conoces? 🥹
+        </h2>
+
+
+        <div class="quiz-final">
+
+            <p>
+                ¿Qué espero que nunca cambie?
+            </p>
+
+            <button onclick="finalQuiz()">
+                Nuestra amistad
+            </button>
+
+            <button onclick="finalQuiz()">
+                Nuestra confianza
+            </button>
+
+            <button onclick="finalQuiz()">
+                Nuestra forma de reírnos
+            </button>
+
+
+            <p>
+                ¿Qué quiero hacer contigo?
+            </p>
+
+            <button onclick="finalQuiz()">
+                Crear muchos más recuerdos
+            </button>
+
+            <button onclick="finalQuiz()">
+                Seguir hablando durante horas
+            </button>
+
+            <button onclick="finalQuiz()">
+                Todo lo anterior ♡
+            </button>
+
+        </div>
+
+
+        <div
+            id="resultadoQuiz">
+
+            <strong>
+                RESULTADO ♡
+            </strong>
+
+            <br><br>
+
+            No importa cuántas respuestas hayas elegido.
+
+            <br><br>
+
+            Después de este año de conocerte,
+            hay algo que sí tengo clarísimo:
+
+            <br><br>
+
+            <strong>
+                eres una de mis personas favoritas
+                en todo el mundo.
+            </strong>
+
+            <br><br>
+
+            17 años y todavía nos quedan
+            muchísimos recuerdos por hacer. ♡
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     SORPRESA FINAL
+================================================== -->
+
+<section
+    class="sorpresa"
+    id="sorpresa">
+
+    <p class="titulo">
+        ¿YA TERMINASTE?
+    </p>
+
+    <h2>
+        Espera... falta algo ♡
+    </h2>
+
+    <div class="caja">
+
+        <p>
+            Hay una última cosa que quiero decirte...
+        </p>
+
+        <button
+            onclick="mostrarSecreto()">
+
+            Abrir último mensaje
+
+        </button>
+
+        <div id="secreto">
+
+            Gracias por llegar a mi vida.
+
+            <br><br>
+
+            No importa cuántos años pasen,
+            siempre voy a guardar con muchísimo
+            cariño todo lo que hemos vivido.
+
+            <br><br>
+
+            Te quiero, mi Zoe. ♡
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     FINAL
+================================================== -->
+
+<section class="final">
+
+    <p>
+        ♡ ✿ ♡ ✿ ♡
+    </p>
+
+    <h2>
+        Happy Birthday
+    </h2>
+
+    <h1>
+        ZOE
+    </h1>
+
+    <p>
+        17 looks beautiful on you ♡
+    </p>
+
+    <p>
+        Gracias por existir.
+    </p>
+
+</section>
+
+
+<script>
+
+
+/* =========================
+   ABRIR PÁGINA
+========================= */
+
+function abrirPagina() {
+
+    document
+        .getElementById("inicio")
+        .classList
+        .add("oculto");
+
+    lanzarCorazones();
+
+}
+
+
+/* =========================
+   17 COSAS
+========================= */
+
+const mensajes = {
+
+    1: "Tu forma de ser hace que todo sea más bonito ♡",
+
+    2: "Siempre consigues hacerme reír.",
+
+    3: "Me encanta poder hablar contigo de cualquier cosa.",
+
+    4: "Contigo puedo ser completamente yo.",
+
+    5: "Tus ocurrencias son de mis cosas favoritas.",
+
+    6: "Gracias por escucharme siempre.",
+
+    7: "Tu personalidad es simplemente preciosa.",
+
+    8: "Tenemos recuerdos que jamás quiero olvidar.",
+
+    9: "Me encanta nuestra confianza.",
+
+    10: "Siempre encontramos algo de qué hablar.",
+
+    11: "Eres una persona muy especial para mí.",
+
+    12: "Espero acompañarte en muchos años más.",
+
+    13: "Nunca cambies esa parte tan bonita de ti.",
+
+    14: "Gracias por todas nuestras bromas.",
+
+    15: "Me alegra muchísimo haberte conocido.",
+
+    16: "Te mereces muchísimas cosas bonitas.",
+
+    17: "Y simplemente... amo tenerte en mi vida. ♡"
+
+};
+
+
+function mostrar17(numero) {
+
+    document
+        .getElementById("mensaje17")
+        .innerHTML = mensajes[numero];
+
+    lanzarCorazones();
+
+}
+
+
+/* =========================
+   SOBRES
+========================= */
+
+function abrirSobre(numero) {
+
+    const mensajesSobre = {
+
+        1:
+        "Aunque algún día estés triste, quiero que recuerdes que nunca tienes que enfrentar todo sola. Siempre habrá alguien que te quiera muchísimo. ♡",
+
+        2:
+        "Si algún día me extrañas, recuerda todas las conversaciones, risas y momentos que hemos compartido. Estoy a un mensaje de distancia. 🌷",
+
+        3:
+        "Si necesitas reír: recuerda que probablemente nosotras podríamos convertir cualquier situación completamente normal en algo ridículo. JAJAJA. 💀",
+
+        4:
+        "Hoy solamente quiero que disfrutes muchísimo tus 17. Es tu día. Mereces sentirte querida, celebrada y muy especial. 🎂♡"
+
+    };
+
+
+    const caja =
+        document.getElementById(
+            "resultadoSobre"
+        );
+
+
+    caja.innerHTML =
+        mensajesSobre[numero];
+
+
+    caja.style.display = "block";
+
+
+    lanzarCorazones();
+
+}
+
+
+/* =========================
+   REGALOS
+========================= */
+
+function abrirRegalo(numero) {
+
+    const regalos = {
+
+        1:
+        "🎞️ Un recuerdo: todas esas conversaciones que comenzaron siendo pequeñas y terminaron convirtiéndose en recuerdos que quiero conservar para siempre.",
+
+        2:
+        "🎀 Algo bonito: espero que nunca olvides lo importante que eres para las personas que te quieren.",
+
+        3:
+        "✨ Sorpresa: este sitio entero es solamente una pequeña prueba de cuánto cariño hay detrás de todo esto."
+
+    };
+
+
+    const caja =
+        document.getElementById(
+            "resultadoRegalo"
+        );
+
+
+    caja.innerHTML =
+        regalos[numero];
+
+
+    caja.style.display = "block";
+
+
+    lanzarCorazones();
+
+}
+
+
+/* =========================
+   TEST
+========================= */
+
+function respuestaTest(boton) {
+
+    boton.classList.add("correcta");
+
+    lanzarCorazones();
+
+}
+
+
+/* =========================
+   CARTA QUE SE ESCRIBE
+========================= */
+
+function escribirCarta() {
+
+    const lineas = [
+
+        "linea1",
+        "linea2",
+        "linea3",
+        "linea4",
+        "linea5"
+
+    ];
+
+
+    lineas.forEach(function(id, indice) {
+
+        setTimeout(function() {
+
+            document
+                .getElementById(id)
+                .classList
+                .add("visible");
+
+        }, indice * 1100);
+
+    });
+
+
+    lanzarCorazones();
+
+}
+
+
+/* =========================
+   JARDÍN
+========================= */
+
+let floresEncontradas = 0;
+
+
+function crearFlores() {
+
+    const jardin =
+        document.getElementById("jardin");
+
+
+    const flores = [
+        "🌷",
+        "✿",
+        "🌸",
+        "🌷",
+        "✿",
+        "🌸",
+        "🌷",
+        "✿",
+        "🌸",
+        "🌷"
+    ];
+
+
+    flores.forEach(function(flor, indice) {
+
+        const elemento =
+            document.createElement("span");
+
+
+        elemento.className = "flor";
+
+        elemento.innerHTML = flor;
+
+
+        elemento.style.left =
+            (5 + Math.random() * 85) + "%";
+
+
+        elemento.style.top =
+            (10 + Math.random() * 75) + "%";
+
+
+        elemento.onclick = function() {
+
+            if (
+                elemento.style.opacity === "0"
+            ) {
+                return;
+            }
+
+
+            elemento.style.opacity = "0";
+
+            floresEncontradas++;
+
+
+            document
+                .getElementById(
+                    "contadorFlores"
+                )
+                .innerText =
+                floresEncontradas;
+
+
+            lanzarCorazones();
+
+
+            if (floresEncontradas === 10) {
+
+                document
+                    .getElementById(
+                        "mensajeJardin"
+                    )
+                    .style.display = "block";
+
+            }
+
+        };
+
+
+        jardin.appendChild(elemento);
+
+    });
+
+}
+
+
+crearFlores();
+
+
+function descubrirJardin() {
+
+    alert(
+        "🌷 Encontraste el secreto: siempre habrá un pedacito de este jardín reservado para ti. ♡"
+    );
+
+    lanzarCorazones();
+
+}
+
+
+/* =========================
+   VIBES
+========================= */
+
+function vibe(numero) {
+
+    const mensajes = {
+
+        1:
+        "☕ Esta vibe es para esos momentos tranquilos en los que solamente quieres respirar y estar en paz. Espero que tengas muchísimos así.",
+
+        2:
+        "💗 Si me extrañas, recuerda que la distancia nunca cambia el cariño que te tengo.",
+
+        3:
+        "🪩 Ahora levántate y baila. Es tu cumpleaños, tienes permiso oficial.",
+
+        4:
+        "🌙 Para las conversaciones de madrugada, los pensamientos random y esos momentos en los que nadie más está despierto."
+
+    };
+
+
+    const resultado =
+        document.getElementById(
+            "resultadoVibe"
+        );
+
+
+    resultado.innerHTML =
+        mensajes[numero];
+
+
+    resultado.style.display = "block";
+
+
+    lanzarCorazones();
+
+}
+
+
+/* =========================
+   QUIZ FINAL
+========================= */
+
+function finalQuiz() {
+
+    document
+        .getElementById(
+            "resultadoQuiz"
+        )
+        .style.display = "block";
+
+
+    lanzarCorazones();
+
+}
+
+
+/* =========================
+   SORPRESA FINAL
+========================= */
+
+function mostrarSecreto() {
+
+    document
+        .getElementById("secreto")
+        .style.display = "block";
+
+
+    lanzarCorazones();
+
+}
+
+
+/* =========================
+   CORAZONES
+========================= */
+
+function lanzarCorazones() {
+
+    const simbolos = [
+
+        "♡",
+        "♥",
+        "✿",
+        "✧",
+        "🌷"
+
+    ];
+
+
+    for (
+        let i = 0;
+        i < 12;
+        i++
+    ) {
+
+        const corazon =
+            document.createElement("div");
+
+
+        corazon.className =
+            "corazon";
+
+
+        corazon.innerHTML =
+            simbolos[
+                Math.floor(
+                    Math.random() *
+                    simbolos.length
+                )
+            ];
+
+
+        corazon.style.left =
+            Math.random() * 100 + "%";
+
+
+        corazon.style.bottom =
+            "20px";
+
+
+        corazon.style.fontSize =
+            (15 + Math.random() * 20)
+            + "px";
+
+
+        document.body.appendChild(
+            corazon
+        );
+
+
+        setTimeout(function() {
+
+            corazon.remove();
+
+        }, 2000);
+
+    }
+
+}
+
+</script>
+
+</body>
+
+</html>
